@@ -33,5 +33,5 @@ spec:
                 key: PGPASSWORD
         resources:
             limits:
-              memory: 512Mi
-              cpu: 200m
+              memory: 256Mi
+              cpu: 100m
