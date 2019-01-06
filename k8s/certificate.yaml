@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: k8s-alexvak-com-tls
+spec:
+  secretName: k8s-alexvak-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: k8s.alexvak.com
+  dnsNames:
+    - k8s.alexvak.com
+    - www.k8s.alexvak.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - k8s.alexvak.com
+          - www.k8s.alexvak.com
