@@ -11,9 +11,9 @@ before_install:
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
   - gcloud auth activate-service-account --key-file service-account.json
-  - gcloud config set project multi-k8s-227621 
+  - gcloud config set project com-alexvak
   - gcloud config set compute/zone us-central1-a
-  - gcloud container clusters get-credentials standard-cluster-1
+  - gcloud container clusters get-credentials alexvak-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker build -t alexvak/react-test -f ./client/Dockerfile.dev ./client
 
